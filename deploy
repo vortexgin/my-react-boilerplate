@@ -1,0 +1,6 @@
+#!/bin/bash
+app="myinternalevents"
+docker build -t ${app} .
+docker run -d -p 8081:8081 \
+  --name=${app} \
+  -v $PWD:/app ${app}
